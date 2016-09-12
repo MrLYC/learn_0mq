@@ -13,9 +13,9 @@ function terminal_jobs() {
 
 trap "terminal_jobs" INT
 
+export params_length=$#
 for params in "$@"; do
     run_in_background ${params}
-    echo ${params} ${JOBS}
 done
 
 read
